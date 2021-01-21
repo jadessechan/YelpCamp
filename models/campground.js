@@ -1,28 +1,11 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useFindAndModify', false);
-mongoose.set('useCreateIndex', true);
-mongoose.set('useUnifiedTopology', true);
-
-//SCHEMA SETUP
-let campgroundSchema = new mongoose.Schema({
-    name: String,
-    image: String,
+const CampgroundSchena = new Schema ({
+    title: String,
+    price: String,
     description: String,
-    author: {
-        id: {
-           type: mongoose.Schema.Types.ObjectID,
-           ref: "User"
-        },
-        username: String
-    },
-    comments: [
-        {
-            type: mongoose.Schema.Types.ObjectID,
-            ref: "Comment"
-        }
-    ]
+    location: String
 });
 
-module.exports = mongoose.model("Campground", campgroundSchema);
+module.exports = mongoose.model('Campground', CampgroundSchena);
