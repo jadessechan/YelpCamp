@@ -6,6 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>HOME</h1>
+    <h1>All Campgrounds</h1>
+    <ul>
+        <% for (let campground of Campgrounds) {%>
+            <li><%= campground.title %></li>
+            <% } %>
+    </ul>
 </body>
 </html>
