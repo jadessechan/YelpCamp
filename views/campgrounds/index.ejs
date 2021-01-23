@@ -8,8 +8,8 @@
 <body>
     <h1>All Campgrounds</h1>
     <ul>
-        <% for (let campground of Campgrounds) {%>
-            <li><%= campground.title %></li>
+        <% for (let campground of campgrounds) {%>
+            <li><a href="/campgrounds/<%= campground._id %>"><%= campground.title %></a></li>
             <% } %>
     </ul>
 </body>
